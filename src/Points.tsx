@@ -11,9 +11,11 @@ export const Points = React.memo(function PointsLayer(props: {
   status: State["status"];
 }) {
   const { points, nextId, curPointIds, dispatch, status, gameId } = props;
+  const customPoints = points.length >= 10 ? [...points].reverse() : points;
+  console.log(customPoints);
   return (
     <>
-      {points.map((p) => (
+      {customPoints.map((p) => (
         <Point
           key={`${p.id}-${gameId}`}
           point={p}

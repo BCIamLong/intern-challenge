@@ -10,7 +10,6 @@ const initialState: State = {
   points: [],
   nextId: 1,
   status: "idle",
-  elapsed: 0,
   autoPlay: false,
   curPointIds: [],
   gameId: 0,
@@ -37,7 +36,6 @@ const reducer = (curState: State, action: Action): State => {
         ...curState,
         status: "playing",
         time: 0,
-        elapsed: 0,
         nextId: 1,
         curPointIds: [],
         points: action.payload,
@@ -84,12 +82,6 @@ const reducer = (curState: State, action: Action): State => {
       return {
         ...curState,
         status: action.payload,
-      };
-
-    case "SET_ELAPSED":
-      return {
-        ...curState,
-        elapsed: action.payload,
       };
 
     case "TOGGLE_AUTOPLAY":

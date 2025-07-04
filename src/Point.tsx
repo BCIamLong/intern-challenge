@@ -60,7 +60,9 @@ export const Point = function ({
         top: point.y,
         left: point.x,
         backgroundColor:
-          point.clicked || isClicked ? backgroundColor : "transparent",
+          point.clicked || isClicked
+            ? backgroundColor
+            : "oklch(87.2% 0.01 258.338)",
         // transition: "background-color 0.1s linear",
       }}
     >

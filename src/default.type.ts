@@ -11,7 +11,6 @@ export type State = {
   points: Point[];
   nextId: number;
   status: "idle" | "playing" | "failed" | "cleared";
-  elapsed: number;
   autoPlay: boolean;
   curPointIds: number[];
   gameId: number;
@@ -24,5 +23,4 @@ export type Action =
   | { type: "CLICK_POINT"; payload: { id: number } }
   | { type: "REMOVE_OLD_POINTS"; payload: number }
   | { type: "SET_STATUS"; payload: State["status"] }
-  | { type: "SET_ELAPSED"; payload: number }
   | { type: "TOGGLE_AUTOPLAY" };
