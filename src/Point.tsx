@@ -4,6 +4,7 @@ import type { Action, Point as TPoint } from "./default.type";
 export const Point = function ({
   point,
   dispatch,
+  curPointIds,
   status,
 }: {
   point: TPoint;
@@ -52,9 +53,9 @@ export const Point = function ({
   return (
     <div
       onClick={handleClick}
-      className={`absolute flex-col w-10 h-10 border-2  rounded-full flex items-center justify-center text-sm font-normal cursor-pointer transition-all duration-300  border-orange-700 text-gray-600 z-[${
-        point.id * 10
-      }]`}
+      className={`absolute flex-col w-10 h-10 border-2  rounded-full flex items-center justify-center text-sm font-normal cursor-pointer transition-all duration-300  border-orange-700 text-gray-600  ${
+        curPointIds.includes(point.id) ? "z-30" : "z-10"
+      }`}
       style={{
         top: point.y,
         left: point.x,
