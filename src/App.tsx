@@ -1,5 +1,5 @@
-import React, { useEffect, useReducer, useState } from "react";
-import type { State, Action, Point } from "./default.type";
+import { useEffect, useReducer } from "react";
+import type { State, Action } from "./default.type";
 import { Points } from "./Points";
 import { generatedPoints } from "./utils";
 
@@ -21,7 +21,7 @@ const initialState: State = {
 // Reducer function
 const reducer = (curState: State, action: Action): State => {
   const { type } = action;
-  const { status, points, gameId, totalPoints, curPointIds, time, nextId } =
+  const { points, gameId, totalPoints, curPointIds, time, nextId } =
     curState || {};
 
   switch (type) {

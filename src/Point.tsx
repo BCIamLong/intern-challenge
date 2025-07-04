@@ -3,8 +3,6 @@ import type { Action, Point as TPoint } from "./default.type";
 
 export const Point = function ({
   point,
-  nextId,
-  curPointIds,
   dispatch,
   status,
 }: {
